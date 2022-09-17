@@ -1,28 +1,59 @@
 {
-  "name": "ponyracer2",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ponyracer",
+  "version": "0.0.0",
   "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview --port 4173",
+    "test:unit": "vitest",
+    "test:unit:ci": "vitest run --coverage",
+    "test:e2e": "vite build && start-server-and-test preview http://localhost:4173/ 'cypress open --e2e'",
+    "test:e2e:ci": "vite build && start-server-and-test preview http://localhost:4173/ 'cypress run --e2e --browser chrome'",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "vue-ninja": "vue-ninja",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "sass": "^1.54.9",
+    "vue": "^3.2.26"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
     "@vue/cli-plugin-eslint": "~4.5.15",
     "@vue/cli-service": "~4.5.15",
     "@vue/compiler-sfc": "^3.0.0",
+    "@rushstack/eslint-patch": "1.1.4",
+    "@types/jsdom": "20.0.0",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "@vitest/coverage-istanbul": "0.23.1",
+    "@vue/eslint-config-prettier": "7.0.0",
+    "@vue/eslint-config-typescript": "11.0.0",
+    "@vue/test-utils": "^2.0.2",
+    "@vue/tsconfig": "0.1.3",
+    "cypress": "10.7.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
+    "eslint": "8.23.0",
+    "eslint-plugin-cypress": "2.12.1",
+    "eslint-plugin-vue": "9.4.0",
+    "jsdom": "^20.0.0",
+    "mochawesome": "7.1.3",
+    "mochawesome-merge": "4.2.1",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.7.1",
+    "start-server-and-test": "1.14.0",
+    "typescript": "4.8.2",
+    "vite": "^3.1.0",
+    "vitest": "^0.23.1",
+    "vue-ninja": "^0.4.0",
+    "vue-tsc": "0.40.7",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2"
   },
-  "eslintConfig": {
+    "eslintConfig": {
     "root": true,
     "env": {
       "node": true
