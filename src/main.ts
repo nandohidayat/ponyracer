@@ -1,6 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
+import { createApp } from 'vue';
+import App from './App.vue';
+import Alert from '@/components/Alert.vue';
 
-createApp(App).mount('#app')
+import './assets/main.css';
+
+createApp(App).component('Alert', Alert).mount('#app');

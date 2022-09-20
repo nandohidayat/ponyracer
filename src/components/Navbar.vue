@@ -17,16 +17,15 @@
 </template>
 
 <script>
-import {defineComponent, ref} from 'vue';
-
-export default defineComponent ({
+import { defineComponent,ref } from 'vue';
+export default defineComponent({
   name:'Navbar',
   setup() {
     const navbarCollapsed = ref(true);
-    const toggleNavbar = () => {navbarCollapsed.value = !navbarCollapsed.value};
+    const toggleNavbar = () => { navbarCollapsed.value = !navbarCollapsed.value};
     const navbarClasses = ref({'collapse':navbarCollapsed});
-    return {navbarCollapsed,toggleNavbar,navbarClasses};
+
+    return {navbarCollapsed,toggleNavbar, navbarClasses}
   }
 })
-
 </script>

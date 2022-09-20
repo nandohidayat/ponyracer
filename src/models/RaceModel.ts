@@ -1,3 +1,8 @@
+import PonyModel from '@/models/PonyModel.ts';
+
 export interface RaceModel {
-  name: string
+  id: number,
+  name: string,
+  ponies: Array<PonyModel>,
+  startInstant: string
 }
